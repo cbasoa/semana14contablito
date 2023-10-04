@@ -3,55 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width"/> <!--la imagen se adaptará al dispositivo-->
     <title>Contablito</title>
 </head>
 <body>
+  <div>
+    <div id="nav">
+      <h1>BARRACA LADRILLOS SRL</h1>
+    </div>
+    <!--Registro de productos-->
+    
     <div id="registroProductos">
-        <form>
-        <label for="identificacion">Identificacion:</label>
-        <input type="text" id="identificacion" name="identificacion">
-        <br>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre">
-        <br>
-        <label for="descripcion">Descripcion:</label>
-        <input type="text" id="descripcion" name="descripcion">
-        <br>
-        <label for="cantidad">Cantidad en stock:</label>
-        <input type="text" id="cantidad" name="cantidad">
-        <br>
-        <label for="costo">Costo asociado al producto:</label>
-        <input type="text" id="costo" name="costo">
-        <br>
-    </form>
+      <h2>Registro de productos</h2>
+      <form >
+        <div class="form">
+      <label for="identificacion">Identificacion:</label>
+      <input type="text" id="identificacion" name="identificacion"></div>
+      <div class="form">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre">
       </div>
+      <div class="form">
+      <label for="descripcion">Descripcion:</label>
+      <textarea name="descripcion" id="descripcion" cols="10" rows="5"></textarea>
+      </div>
+      <div class="form">
+      <label for="cantidad">Cantidad en stock:</label>
+      <input type="number" id="cantidad" name="cantidad">
+      </div>
+      <div class="form">
+      <label for="costo">Costo asociado al producto:</label>
+      <input type="number" id="costo" name="costo">
+       </div>
+       <div class="form">
+        <label for="submit">
+      <input type="submit" name="submit" id="submit"></label>
+       </div>
       
-      <div id="registroMovimientos">
-        <form>
-        <label for="tipoTransaccion">Tipo de transaccion:</label>
-        <input type="text" id="tipoTransaccion" name="tipoTransaccion">
-        <br>
-        <label for="fecha">Fecha de la transaccion:</label>
-        <input type="date" id="fecha" name="fecha">
-        <br>
-        <label for="producto">Producto:</label>
-        <input type="text" id="producto" name="producto">
-        <br>
-        <label for="cantidadProducto">Cantidad del producto:</label>
-        <input type="text" id="cantidadProducto" name="cantidadProducto">
-        <br>
-        <label for="costoUnitario">Costo unitario del producto:</label>
-        <input type="text" id="costoUnitario" name="costoUnitario">
-        <br>
-        <label for="subtotal">Subtotal:</label>
-        <input type="text" id="subtotal" name="subtotal">
-        <br>
-        <label for="iva">IVA:</label>
-        <input type="text" id="iva" name="iva">
-        <br>
-        <label for="total">Total:</label>
-        <input type="text" id="total" name="total">
-    </form>
-      </div>  
+  </form>
+    </div>
+
+  <!--Registro de movimientos de mercadería (compra / venta),-->
+    <div id="registroMovimientos"> 
+       <h2>Registro de Movimientos</h2>
+      <form >
+        <div class="form">
+      <label for="tipoTransaccion">Tipo de transaccion:</label>
+      <select name="" id="tipoTransaccion">
+          <option value=""></option>
+          <option value="compra">Compra</option>
+          <option value="venta">Venta</option>
+      </select>
+      </div>
+      <div class="form">
+      <label for="fecha">Fecha de la transaccion:</label>
+      <input type="date" id="fecha" name="fecha">
+      </div>
+      <div class="form">
+      <label for="producto">Producto:</label>
+      <input type="text" id="producto" name="producto">
+      </div>
+      <div class="form">
+      <label for="cantidadProducto">Cantidad del producto:</label>
+      <input type="text" id="cantidadProducto" name="cantidadProducto">
+      </div>
+      <div class="form">
+      <label for="costoUnitario">Costo unitario del producto:</label>
+      <input type="text" id="costoUnitario" name="costoUnitario">
+      </div>
+      <div class="form">
+      <label for="subtotal">Subtotal:</label>
+      <input type="text" id="subtotal" name="subtotal">
+      </div>
+      <div class="form">
+      <label for="iva">IVA:</label>
+      <input type="number" id="iva" name="iva">
+      </div>
+      <div class="form">
+      <label for="submit">Total:</label>
+      <input type="text" id="total" name="total">
+       </div>
+      <div class="form">
+        <label for="submit">
+      <input type="submit" name="submit" id="submit"></label>
+       </div>
+  </form>
+    </div>
+  
+    
+  </div>  
+  <div>
+    <table id="table"> <!--Los datos ingresados deben ser consistentes (si se genera un movimiento de
+      stock, el mismo debe verse reflejado en el stock del producto)-->
+        <tr>
+          <th>Nombre</th>
+         <th>Stock</th>
+         <th>Descripcion</th>
+         <th>Cantidad en stock:</th>
+         <th>Costo asociado al producto</th>
+
+        </tr>
+        <tr>
+        <td>Ladrillos</td>
+        <td>50</td>
+        <td>Un ladrillo es un material de construcción, normalmente cerámico y con forma ortoédrica, 
+          cuyas dimensiones más normales permiten que un operario lo pueda colocar con una sola mano. </td>
+          <td>100</td>
+          <td>$30</td>
+      </tr>
+      
+    </table></div>
+  <!--alertas de productos que de los que haya bajo stock-->
+  <div id="alert"><h4>Bajo Stock del Producto ....!!</h4>
+    <p>Hay menos de <strong>5</strong> productos en stock</p></div>
 </body>
 </html>

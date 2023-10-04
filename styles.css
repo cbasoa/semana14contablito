@@ -1,0 +1,142 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column; background-image: url("img/ladrillo.png");
+    box-sizing: border-box;
+}
+
+
+/*Titulos*/
+h1 {
+    font-family: 'Young Serif', serif;
+    color:wheat;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    font-size: 90px;
+
+}
+h2{
+    font-family: 'Young Serif', serif;
+    color:black;
+    text-shadow: 2px 2px wheat;
+    text-align: center;
+    font-size: 50px;
+    margin: 10px 15px 15px;
+    border-radius: 20px;
+    background-color:  rgb(245, 153, 92);
+}
+/*Forms*/
+#registroProductos{
+    width: 50%;
+    float: left;
+    text-align: center;
+    position: relative;
+    
+    
+}
+
+#registroMovimientos{
+    width: 50%;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+form{
+    display: block;
+    width: 80%;
+    padding: 10px 10px;
+    margin: 20px;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(245, 153, 92);
+   }
+   
+   .form  {
+    display: block;
+    position: relative;
+    width: calc(90%);
+    height: auto;
+    margin: 10px auto;
+    padding: 30px 10px 10px;
+   }
+   
+   .form  input,  textarea, select{
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    border: 0;
+    padding: 10px 10px;
+    font-size: 18px;
+    background-color: rgb(245, 99, 1);
+    color: white;
+   }
+   
+ label, #submit {
+    display: block;
+    position: absolute;
+    width: auto;
+    top: 8px;
+    left: 15px;
+    padding: 5px 5px;
+    border-radius: 20px;
+    background-color: rgba(255,0,0, .3)
+   }
+/*Alerta*/
+
+#alert{
+    background-color: red;
+    height: 125px;
+    width: 70%;
+    margin: 40px 40px;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Young Serif', serif;
+    text-align: center;
+    text-shadow: black;
+    animation-name: alert;
+    animation-duration: 4s;
+}
+
+
+@keyframes alert {
+  from {background-color: red;
+color: yellow;}
+  to {background-color: yellow;
+    color: red}
+}
+
+
+/*datos ingresados*/
+
+#table{
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    margin: 20px 20px;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(245, 153, 92);
+}
+th, td{
+    border: solid 2px rgb(245, 99, 1);
+    border-radius: 10px;
+    font-size: 15px;
+    
+}
+/*Responsive*/
+@media screen and (max-width: 700px){
+    #registroProductos{
+        width: 100%;
+    }
+    
+    #registroMovimientos{
+        width: 100%;
+    }
+    #aler{
+        width: 100%;
+    }
+    
+}
