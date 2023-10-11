@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width"/> <!--la imagen se adaptará al dispositivo-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Contablito</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
     
     <div id="registroProductos">
       <h2>Registro de productos</h2>
-      <form >
+      <form  >
         <div class="form">
       <label for="identificacion">Identificacion:</label>
       <input type="text" id="identificacion" name="identificacion"></div>
@@ -48,7 +49,7 @@
   <!--Registro de movimientos de mercadería (compra / venta),-->
     <div id="registroMovimientos"> 
        <h2>Registro de Movimientos</h2>
-      <form >
+      <form  >
         <div class="form">
       <label for="tipoTransaccion">Tipo de transaccion:</label>
       <select name="" id="tipoTransaccion">
@@ -95,6 +96,7 @@
     
   </div>  
   <div>
+    <h3>Ingreso de Productos</h3>
     <table id="table"> <!--Los datos ingresados deben ser consistentes (si se genera un movimiento de
       stock, el mismo debe verse reflejado en el stock del producto)-->
         <tr>
@@ -103,6 +105,7 @@
          <th>Descripcion</th>
          <th>Cantidad en stock:</th>
          <th>Costo asociado al producto</th>
+         <th>Eliminar</th>
 
         </tr>
         <tr>
@@ -112,10 +115,12 @@
           cuyas dimensiones más normales permiten que un operario lo pueda colocar con una sola mano. </td>
           <td>100</td>
           <td>$30</td>
+        <td><i class="fa fa-trash-o" style="font-size:24px;"></i></td>
       </tr>
       
     </table></div>
   <!--alertas de productos que de los que haya bajo stock-->
+  <p class="alert">Alerta del producto:</p>
   <div id="alert"><h4>Bajo Stock del Producto ....!!</h4>
     <p>Hay menos de <strong>5</strong> productos en stock</p></div>
 </body>
